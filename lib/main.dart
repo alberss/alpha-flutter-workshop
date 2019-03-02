@@ -20,6 +20,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.indigo,
       ),
       home: MembersListScreen(githubProvider),
+      onGenerateRoute: _routes,
     );
+  }
+
+  Route _routes(RouteSettings settings) {
+    return MaterialPageRoute(
+        builder: (context) => settings.name == '/'
+            ? MembersListScreen(githubProvider)
+            : MemberReposScreen(githubProvider, memberName: settings.name));
   }
 }

@@ -4,15 +4,15 @@ import 'package:alpha_flutter_workshop/src/widgets/member_tile.dart';
 import 'package:flutter/material.dart';
 
 class MembersListScreen extends StatelessWidget {
-  final GithubApiProvider githubApiProvider;
+  final GithubApiProvider githubProvider;
 
-  MembersListScreen(this.githubApiProvider);
+  MembersListScreen(this.githubProvider);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        future: githubApiProvider.getMembers(),
+        future: githubProvider.getMembers(),
         builder: (context, AsyncSnapshot<List<Member>> snapshot) {
           return snapshot.hasData
               ? _buildList(snapshot.data)
