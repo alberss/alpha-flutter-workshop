@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class GithubApiProvider {
   Future<List<Member>> getMembers() async {
     final response =
-        await http.get('https://api.github.com/orgs/valudio/members');
+        await http.get('https://api.github.com/orgs/BcnRust/members');
     final List<dynamic> listFromJson = json.decode(response.body);
     final membersList =
         listFromJson.map((parsed) => Member.fromJson(parsed)).toList();
