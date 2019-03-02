@@ -1,6 +1,6 @@
 # alpha_flutter_workshop
 
-A new Flutter project.
+Alpha Flutter Workshop project.
 
 ## Getting Started
 
